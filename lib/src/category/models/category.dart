@@ -21,7 +21,6 @@ class WooProductCategory {
   String? description;
 
   /// Category archive display type. Options: default, products, subcategories and both. Default is default.
-  WooCategoryDisplay? display;
 
   /// Image data.
   WooProductCategoryImage? image;
@@ -40,7 +39,6 @@ class WooProductCategory {
       this.slug,
       this.parent,
       this.description,
-      this.display,
       this.image,
       this.menuOrder,
       this.count,
@@ -52,7 +50,6 @@ class WooProductCategory {
     slug = json['slug'];
     parent = json['parent'];
     description = json['description'];
-    display = WooCategoryDisplay.fromString(json['display']);
     image = json['image'] != null
         ? WooProductCategoryImage.fromJson(json['image'])
         : null;
@@ -70,7 +67,6 @@ class WooProductCategory {
     data['slug'] = slug;
     data['parent'] = parent;
     data['description'] = description;
-    data['display'] = display;
     if (image != null) {
       data['image'] = image!.toJson();
     }
@@ -91,7 +87,6 @@ class WooProductCategory {
         slug: FakeHelper.word(),
         parent: FakeHelper.integer(),
         description: FakeHelper.sentence(),
-        display: WooCategoryDisplay.fake(),
         image: WooProductCategoryImage.fake(),
         menuOrder: FakeHelper.integer(),
         count: FakeHelper.integer(),
