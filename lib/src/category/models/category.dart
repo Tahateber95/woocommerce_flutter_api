@@ -52,7 +52,7 @@ class WooProductCategory {
     slug = json['slug'];
     parent = json['parent'];
     description = json['description'];
-    display = json['display'];
+    display = WooCategoryDisplay.fromString(json['display']);
     image = json['image'] != null
         ? WooProductCategoryImage.fromJson(json['image'])
         : null;
