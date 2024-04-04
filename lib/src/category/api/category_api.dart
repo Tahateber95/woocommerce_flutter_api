@@ -36,7 +36,6 @@ extension WooCategoryApi on WooCommerce {
     List<int>? exclude,
     List<int>? include,
     WooSortOrder order = WooSortOrder.desc,
-    WooSortOrderBy orderBy = WooSortOrderBy.date,
     bool? hideEmpty,
     int? parent,
     int? product,
@@ -59,7 +58,6 @@ extension WooCategoryApi on WooCommerce {
         exclude: exclude,
         include: include,
         order: order,
-        orderBy: orderBy,
         hideEmpty: hideEmpty,
         parent: parent,
         product: product,
@@ -80,7 +78,6 @@ extension WooCategoryApi on WooCommerce {
     required List<int>? exclude,
     required List<int>? include,
     required WooSortOrder order,
-    required WooSortOrderBy orderBy,
     required bool? hideEmpty,
     required int? parent,
     required int? product,
@@ -91,7 +88,6 @@ extension WooCategoryApi on WooCommerce {
       'page': page,
       'per_page': perPage,
       'order': order.name,
-      'orderby': orderBy.name,
     };
 
     if (search != null) {
