@@ -282,14 +282,30 @@ class WooProduct {
       : id = json['id'],
         name = json['name'],
         slug = json['slug'],
-        dateCreated = DateTime.parse(json['date_created']),
-        dateCreatedGmt = DateTime.parse(json['date_modified_gmt']),
-        dateModified = DateTime.parse(json['date_modified']),
-        dateModifiedGmt = DateTime.parse(json['date_created_gmt']),
-        dateOnSaleFrom = DateTime.parse(json['date_on_sale_from']),
-        dateOnSaleFromGmt = DateTime.parse(json['date_on_sale_from_gmt']),
-        dateOnSaleTo = DateTime.parse(json['date_on_sale_to']),
-        dateOnSaleToGmt = DateTime.parse(json['date_on_sale_to_gmt']),
+        dateCreated = json['date_created'] != null
+            ? DateTime.parse(json['date_created'])
+            : null,
+        dateCreatedGmt = json['date_modified_gmt'] != null
+            ? DateTime.parse(json['date_modified_gmt'])
+            : null,
+        dateModified = json['date_modified'] != null
+            ? DateTime.parse(json['date_modified'])
+            : null,
+        dateModifiedGmt = json['date_created_gmt'] != null
+            ? DateTime.parse(json['date_created_gmt'])
+            : null,
+        dateOnSaleFrom = json['date_on_sale_from'] != null
+            ? DateTime.parse(json['date_on_sale_from'])
+            : null,
+        dateOnSaleFromGmt = json['date_on_sale_from_gmt'] != null
+            ? DateTime.parse(json['date_on_sale_from_gmt'])
+            : null,
+        dateOnSaleTo = json['date_on_sale_to'] != null
+            ? DateTime.parse(json['date_on_sale_to'])
+            : null,
+        dateOnSaleToGmt = json['date_on_sale_to_gmt'] != null
+            ? DateTime.parse(json['date_on_sale_to_gmt'])
+            : null,
         permalink = json['permalink'],
         type = WooProductType.fromString(json['type']),
         status = WooProductStatus.fromString(json['status']),
